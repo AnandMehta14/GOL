@@ -2,20 +2,21 @@ pipeline {
   agent {
    label 'Slave1' 
   }
+  tool {
+    Maven
+  }
   
   stages {
     
     stage('Git Clone') {
-      steps {
-        echo 'hello'
-        //git 'https://github.com/AnandMehta14/GOL.git'
+      steps {        
+        git 'https://github.com/AnandMehta14/GOL.git'
       }
     }
     
     stage('Build') {
-      steps {
-        echo 'Bye'
-        //sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+      steps {       
+        sh 'mvn -Dmaven.test.failure.ignore=true clean package'
       }
     }
     
