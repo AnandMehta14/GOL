@@ -2,7 +2,8 @@ pipeline {
   agent {
    label 'Slave1' 
   }
-  tool {
+  
+  tools {
     Maven
   }
   
